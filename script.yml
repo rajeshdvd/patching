@@ -1,0 +1,9 @@
+---
+- hosts: dev
+  become: yes
+  tasks:
+   - file: dest=/tmp/fstab1 state=directory
+   - file: dest=/tmp/data state=directory
+   - copy: src=/etc/fstab dest=/tmp/
+   - yum:  name=httpd state=present
+   - service: name=httpd state=started 
