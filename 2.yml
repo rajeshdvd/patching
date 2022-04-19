@@ -1,0 +1,10 @@
+---
+- hosts: dev
+  become: yes
+  tasks: 
+  # - copy: src=/etc/fstab  dest=/tmp/
+  # - file: dest=/tmp/clone state=directory
+  # - file: dest=/tmp/clone1 state=touch
+   - group: name=shetty gid=1600 state=present
+   - user:  name=krithi uid=1601 group=1600 createhome=yes
+

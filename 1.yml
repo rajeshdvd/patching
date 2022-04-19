@@ -1,0 +1,15 @@
+---
+- hosts: dev
+  become: yes
+  tasks:
+   - copy: src=/etc/fstab dest=/tmp/
+   - file: dest=/tmp/data1 state=directory
+   - file: dest=/tmp/data2 state=directory
+   - file: dest=/tmp/data2 state=absent
+   - file: dest=/tmp/file1 state=touch
+   - group: name=krithi gid=1500 state=present
+   - user: name=uppena uid=1501 group=1500 createhome=yes
+
+
+
+
